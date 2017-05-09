@@ -1,0 +1,1 @@
+export const CHECH_ROUTER = 'CHECH_ROUTER'
