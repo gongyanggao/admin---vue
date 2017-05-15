@@ -4,8 +4,9 @@
 
 <template>
     <ol class="breadcrumb">
-      <li v-for="item in items.arr"><a href="#"">{{item.label}}</a></li>
-      <li class="active">{{items.currentLabel}}</li>
+      <li class=""><a href="/">首页</a></li>
+      <li v-for='(item,index) in $route.matched' v-if='item.path !== ""' :class='{active: (index + 1) === len}'><a v-bind:href='(index + 1) === len ? "#" : item.path'  >{{item.name}}</a></li>
+      
     </ol>
 </template>
 
@@ -13,15 +14,25 @@
 
 export default {
 	name: 'c-breadcrumb',
-  props: {
-    items: {
-      type: Object,
-      required: true
-    }
-  }
+	data() {
+		return {
+			len: []
+		}
+	},
+	created() {
+		this.len = this.$route.matched.length
+		console.log(this.len)
+	}
 }
 </script>
 
-<style lang='css'>
+<style lang='css' scoped>
+.breadcrumb{
+  margin-bottom: 20px;
+}
 
+.breadcrumb>.active a{
+    color: #777;
+    cursor: text;
+}
 </style>

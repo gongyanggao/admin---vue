@@ -263,8 +263,6 @@
 </template>
 
 <script>
-import * as userservice from './service/user'
-
 export default {
   name: 'NaviBar',
   data() {
