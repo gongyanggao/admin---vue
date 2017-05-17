@@ -16,11 +16,11 @@ Vue.use(ElementUi);
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: {
-    App
-  },
-  store
+	el: '#app',
+	router,
+	template: '<App/>',
+	components: {
+		App
+	},
+	store
 })

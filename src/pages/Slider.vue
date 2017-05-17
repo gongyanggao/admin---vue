@@ -35,7 +35,7 @@
           </a>
           <ul class="treeview-menu">
             <router-link tag="li" :to="{ name: '总体信息' }"><a href=""><i class="fa fa-circle-o"></i>总体信息</a></router-link>
-            <router-link tag="li" :to="{ name: 'TableList' }"><a href=""><i class="fa fa-circle-o"></i>列表页面</a></router-link>
+            <router-link tag="li" :to="{ name: '图表展示' }"><a href=""><i class="fa fa-circle-o"></i>图表展示</a></router-link>
           </ul>
         </li>
         

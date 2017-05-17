@@ -2,23 +2,27 @@ import CInfobox from '../../components/Infobox'
 import CSmallbox from '../../components/Smallbox'
 import CCarousel from '../../components/Carousel'
 import CCollapse from '../../components/CollapsableBox'
-import echarts from 'echarts'
-import 'echarts/map/js/china.js'
-import 'echarts/map/js/world.js'
 import IEcharts from 'vue-echarts-v3'
-import { getCheatTable, getInfo, getSummary } from '../../service/index'
-import { worldMap, chinaMap, pie} from '../../utils/chartOption.js'
+import worldMap from 'echarts/map/json/world.json'
+import chinaMap from 'echarts/map/json/china.json'
+IEcharts.registerMap('world', worldMap)
+IEcharts.registerMap('china', chinaMap)
+
+import {
+	getCheatTable,
+	getInfo,
+	getSummary
+} from '../../service/index'
+import {
+	worldOption,
+	chinaOption,
+	pie
+} from '../../utils/chartOption.js'
+
 export default {
 	name: 'over-view',
 	data() {
 		return {
-			breadcrumb: {
-				arr: [{
-					label: '后台管理系统',
-					path: ''
-				}],
-				currentLabel: '总览页面'
-			},
 			infoLst: [],
 			summary: [],
 			isWorld: true,
@@ -35,7 +39,6 @@ export default {
 				}],
 				arrData: []
 			},
-			ec: null,
 			collapse2: {
 				class: 'box-info',
 				tittle: '诈骗事件统计',
@@ -49,17 +52,17 @@ export default {
 		}
 	},
 	computed: {
-		china: () =>{
-			let opt = chinaMap()
+		china: () => {
+			let opt = chinaOption()
 			opt.series[0].mapType = 'china'
 			return opt
 		},
-		world: () =>{
-			let opt = worldMap()
+		world: () => {
+			let opt = worldOption()
 			opt.series[0].mapType = 'world'
 			return opt
 		},
-		pie: () =>{
+		pie: () => {
 			let opt = pie()
 			opt.series[0].name = '诈骗事件统计'
 			return opt
@@ -80,9 +83,9 @@ export default {
 
 		getSummary().then((res) => {
 			let arr = res.data.data.array,
-					obj, lst = []
-			if(arr && arr.length) {
-				for(let i = 0; i < arr.length; i++){
+				obj, lst = []
+			if (arr && arr.length) {
+				for (let i = 0; i < arr.length; i++) {
 					obj = {}
 					obj.id = arr[i].id
 					obj.number = arr[i].number
@@ -97,31 +100,18 @@ export default {
 		})
 	},
 	mounted() {
-		// this.ec = echarts.init(document.getElementById('map'))
-		// this.ec.setOption(this.world)
+
 	},
 	methods: {
 		onReady(instance) {
-			
+
 		},
 		pieClick() {
-			
-		},
-		changeToChina() {
-			this.isWorld = false;
-		},
-		changeToWorld() {
-			this.isWorld = true;
+
 		}
 	},
 	watch: {
-		isWorld(curVal, oldVal) {
-			if (this.isWorld === true) {
-				this.ec.setOption(this.world)
-			} else {
-				this.ec.setOption(this.china)
-			}
-		}
+
 	},
 	components: {
 		CInfobox,

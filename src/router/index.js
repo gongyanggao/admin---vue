@@ -6,8 +6,7 @@ import Home from '../pages/Home.vue'
 import ContentWrap from '../pages/ContentWrap.vue'
 import OverView from '../pages/overview'
 import ViewDetail from '../pages/viewdetail'
-import TableList from '../pages/tablelist/TableList.vue'
-import ListDetail from '../pages/tablelist/ListDetail.vue'
+import ChartPage from '../pages/chartpage'
 
 // forms
 Vue.use(Router)
@@ -32,13 +31,9 @@ export default new Router({
         name: '诈骗详情页',
         component: ViewDetail
       }, {
-        path: 'tablelist',
-        name: 'TableList',
-        component: TableList
-      }, {
-        path: 'tablelist/listdetail',
-        name: 'ListDetail',
-        component: ListDetail
+        path: 'chartpage',
+        name: '图表展示',
+        component: ChartPage
       }]
     }]
   }],

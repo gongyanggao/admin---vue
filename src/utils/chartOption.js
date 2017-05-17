@@ -1,4 +1,4 @@
-export function worldMap() {
+export function worldOption() {
 	return {
 		tooltip: {
 			trigger: 'item',
@@ -22,7 +22,7 @@ export function worldMap() {
 	}
 };
 
-export function chinaMap() {
+export function chinaOption() {
 	return {
 		tooltip: {
 			trigger: 'item',
