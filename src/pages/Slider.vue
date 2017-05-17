@@ -28,13 +28,13 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>反诈骗目录</span>
+            <i class="fa fa-dashboard"></i> <span>反诈</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <router-link tag="li" :to="{ name: '反诈展示页' }"><a href=""><i class="fa fa-circle-o"></i>反诈展示页</a></router-link>
+            <router-link tag="li" :to="{ name: '总体信息' }"><a href=""><i class="fa fa-circle-o"></i>总体信息</a></router-link>
             <router-link tag="li" :to="{ name: 'TableList' }"><a href=""><i class="fa fa-circle-o"></i>列表页面</a></router-link>
           </ul>
         </li>

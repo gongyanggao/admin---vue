@@ -5,7 +5,7 @@ import Router from 'vue-router'
 import Home from '../pages/Home.vue'
 import ContentWrap from '../pages/ContentWrap.vue'
 import OverView from '../pages/overview'
-import ViewDetail from '../pages/overview/ViewDetail.vue'
+import ViewDetail from '../pages/viewdetail'
 import TableList from '../pages/tablelist/TableList.vue'
 import ListDetail from '../pages/tablelist/ListDetail.vue'
 
@@ -20,15 +20,15 @@ export default new Router({
     component: Home,
     children: [{
       path: 'home',
-      name: '公共内容',
+      name: '反诈',
       component: ContentWrap,
       redirect: '/home/overview',
       children: [{
         path: 'overview',
-        name: '反诈展示页',
+        name: '总体信息',
         component: OverView
       }, {
-        path: 'overview/viewdetail',
+        path: 'overview/viewdetail/:id',
         name: '诈骗详情页',
         component: ViewDetail
       }, {

@@ -1,17 +1,16 @@
 const Mock = require('mockjs')
 
 module.exports = {
-	api: '/mock/ui/v1/getuser',
+	api: '/mock/ui/v1/getinfo',
 	response: function(req, res) {
 		res.json({
+			rlt: 'true',
 			data: Mock.mock({
-				'name': '@name',
-				'position': 'wuhan',
-				'state': {
-					'color': '@color',
-					'name': 'online'
-				},
-				'createdAt': '@date("yyyy-MM-dd")'
+				'array|1-10': [{
+					'color': 'bg-green',
+					'text': '@county',
+					"number|1-100": 100
+				}]
 			})
 		})
 	}

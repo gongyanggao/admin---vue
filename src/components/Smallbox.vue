@@ -4,9 +4,9 @@
     <div v-for="item in infoSummary" class="small-box" v-bind:class="item.class">
       <div class="inner">
         <p>{{item.tittle}}</p>
-        <h3>{{item.summary}}</h3>
+        <h3>{{item.number}}</h3>
       </div>
-      <a href="#" class="small-box-footer">查看详细
+      <a @click='detail(item)' href="" class="small-box-footer">查看详细
         <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -25,6 +25,12 @@ export default {
   },
   created () {
 
+  },
+  methods: {
+    detail(data) {
+      
+      this.$router.push('/home/overview/viewdetail/' + data.id);
+    }
   }
 }
 </script>

@@ -20,6 +20,9 @@ export function httpResultProxy (resultPromise, VO = null) {
   return new Promise((resolve, reject) => {
     resultPromise.then(res => {
       if (res) {
+        console.log(res)
+        resolve(res.data)
+        return
         if (res.rlt === 'true') {
           resolve(mapVO(VO, res.data))
         } else {

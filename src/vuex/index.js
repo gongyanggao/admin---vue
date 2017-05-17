@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import crumbs from './modules/crumbs'
+import chartOption from './modules/chartOption'
 
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-  modules: { crumbs },
+  modules: { chartOption },
   strict: debug
 })

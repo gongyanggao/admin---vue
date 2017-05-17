@@ -1,14 +1,25 @@
 /**
  * HTTP数据通信模块
  */
-
-import 'whatwg-fetch'
 import qs from 'querystring'
+import Vue from 'vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+Vue.use(VueAxios, axios);
 
 // 缺省请求头
-const defaultHeaders = {
+/*const defaultHeaders = {
   'Accept': 'application/json',
   'Content-Type': 'application/json' // application/x-www-form-urlencoded
+}
+
+let requests = {
+  url: '',
+  method: '',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json' // application/x-www-form-urlencoded
+  }
 }
 
 // 请求参数加工
@@ -50,7 +61,7 @@ function checkStatus (response) {
 function parseJSON (response) {
   return response.json()
 }
-
+*/
 /**
  * 接口调用服务
  * @param {String} url 接口API（必填）
@@ -58,19 +69,19 @@ function parseJSON (response) {
  * @return {Object} Promise
  * @throws {Error}
  */
-const callService = (url, options = {}) => {
-  return window.fetch(...mutate(url, options))
-    .then(checkStatus)
-    .then(parseJSON)
-    .catch(error => {
+const callService = (url, method = 'GET') => {
+  return Vue.axios(url, method)
+    /*.then((response) => {
+      return response
+    }).catch(error => {
       console.log(error)
       throw error
-    })
+    })*/
 }
 
 export default callService
 
-export const get = (url, args, options = {}) => {
+/*export const get = (url, args, options = {}) => {
   options.method = 'GET'
   options.query = args
   return callService(url, options)
@@ -98,4 +109,4 @@ export const del = (url, args, options = {}) => {
   options.method = 'DELETE'
   options.query = args
   return callService(url, options)
-}
+}*/
