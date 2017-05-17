@@ -24,7 +24,7 @@
                 </el-form-item><el-form-item>
                   <div class="block">
                     <el-date-picker
-                      v-model="value7"
+                      v-model="formInline.date"
                       type="daterange"
                       align="right"
                       placeholder="选择日期范围"
