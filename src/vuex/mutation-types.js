@@ -1,1 +1,1 @@
-export const CHECH_ROUTER = 'CHECH_ROUTER'
+export const SET_USER = 'SET_USER'

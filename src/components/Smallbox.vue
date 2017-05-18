@@ -29,7 +29,7 @@ export default {
   methods: {
     detail(data) {
       
-      this.$router.push('/home/overview/viewdetail/' + data.id);
+      this.$router.push('/home/content/viewdetail/' + data.id);
     }
   }
 }

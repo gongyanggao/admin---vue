@@ -41,7 +41,7 @@ export default{
       }
     },
     created() {
-      getTable(this.$route.params.id).then((res) => {
+      getTable(this.$route.params.id, 159).then((res) => {
         this.arrs = res.data.data.array
       }).catch((err) => {
         console.log(err)

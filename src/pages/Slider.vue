@@ -5,11 +5,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="~admin-lte/dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>高宇</p>
-          <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+          <p>{{username}}</p>
+          <!-- <a href="#"><i class="fa fa-circle text-success"></i>Online</a> -->
         </div>
       </div>
       <!-- search form -->
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-//import * as userservice from './service/user'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'slider',
@@ -58,11 +58,33 @@ export default {
         remainTasksCount: 3
       }
     },
+    computed: {
+      username: function() {
+        return this.$store.state.user.username || localStorage.username
+      }
+    },
     methods: {
      
     },
   created () {
-      
+      console.log(this.$store.state.user.username)
   }
 }
 </script>
+<style scoped>
+  .image{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+  .user-panel{
+    height: 60px;
+  }
+  .user-panel>.info {
+    line-height: 45px;
+    position: absolute;
+    left: 75px;
+    height: 45px;
+    font-size: 20px;
+}
+</style>

@@ -60,6 +60,7 @@ export default {
 		world: () => {
 			let opt = worldOption()
 			opt.series[0].mapType = 'world'
+
 			return opt
 		},
 		pie: () => {
