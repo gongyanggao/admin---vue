@@ -10,6 +10,12 @@
             </c-collapse>
           </div>
         </div>
+
+        <div class="row">
+          <sparkline-box v-for="item in sparkBoxes" :spark-box="item">
+            <spark-line :params="{type: item.type,height:60,width:60}" :data='item.data'></spark-line>
+          </sparkline-box>
+        </div>
       </section>
   </div>
 </template>

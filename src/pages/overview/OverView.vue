@@ -25,11 +25,16 @@
               <div v-if="!isWorld" class="chart tab-pane active" style="position: relative; height: 300px;">
                 <IEcharts :option="china" :loading="false" :resizable="true" style="height: 100%;width: 100%;"></IEcharts>
               </div>
-              
+
+              <div class="row">
+                <c-infobox v-for="item in infoLst" :info-list="item"></c-infobox>
+              </div>
             </div>
+
           </div>
 
-          <c-infobox v-bind:info-list="infoLst"></c-infobox>
+          
+          
           
           <c-collapse :coll-option="collapse2">
             <c-carousel :caro-option="carousel"></c-carousel>
@@ -41,7 +46,7 @@
               <IEcharts :option="pie" :loading="false" :resizable="true" @ready="onReady" @click="pieClick" style="height: 100%;width: 100%;"></IEcharts>
             </div>
           </c-collapse>
-          <c-smallbox :info-summary="summary"></c-smallbox>
+          <c-smallbox v-for="item in summary" :info-summary="item"></c-smallbox>
           
         </div>
       </div>

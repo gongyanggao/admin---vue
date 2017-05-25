@@ -43,3 +43,11 @@ export function getTable(id) {
 export function getSummary() {
 	return instance.get(API.GET_SUMMARY)
 }
+
+
+/**
+ * 获取sparkline
+ */
+export function getSparkline() {
+	return instance.get(API.GET_SPARKLINE)
+}

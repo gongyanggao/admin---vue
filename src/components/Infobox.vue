@@ -1,12 +1,10 @@
 <template>
-  <div class="row">
-    <div v-for="item in infoList" class="info-box col-md-3" v-bind:class="item.color">
+    <div class="info-box col-md-3" :class="infoList.color">
       <div class="info-box-content">
-        <span class="info-box-text">{{item.text}}</span>
-        <span class="info-box-number">{{item.number}}</span>
+        <span class="info-box-text">{{infoList.text}}</span>
+        <span class="info-box-number">{{infoList.number}}</span>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

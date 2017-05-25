@@ -31,7 +31,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="~admin-lte/dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -213,16 +213,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="~admin-lte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Liangxiao</span>
+              <img src="~admin-lte/dist/img/user7-128x128.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{username}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="~admin-lte/dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Liangxiao - wuhan
+                  {{username}} - wuhan
                   <small>2017-05-08</small>
                 </p>
               </li>
@@ -254,7 +254,7 @@
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="#" @click="logout" title="注销登录"><i class="fa fa-sign-out"></i></a>
             <!-- <aside class="control-sidebar control-sidebar-dark control-sidebar-open">
               <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
                 <li class="active"><a href="#control-sidebar-theme-demo-options-tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li><li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
@@ -435,6 +435,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'NaviBar',
   data() {
@@ -445,8 +446,15 @@ export default {
       remainTasksCount: 3
     }
   },
+  computed: {
+    username: function() {
+      return this.$store.state.user.username || localStorage.username
+    }
+  },
   methods: {
-   
+    logout: function() {
+      this.$router.push('/')
+    }
   },
   created () {
     
