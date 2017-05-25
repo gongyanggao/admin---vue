@@ -103,8 +103,7 @@
         });
       },
       resetForm() {
-        // this.$refs[formName].resetFields();
-        alert('reset')
+        this.$refs[formName].resetFields();
       }
     }
   }
