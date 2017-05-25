@@ -1,5 +1,8 @@
 import CCollapse from '../../components/CollapsableBox'
 import IEcharts from 'vue-echarts-v3'
+import SparkLine from '../../components/Sparkline'
+import SparklineBox from '../../components/SparklineBox'
+import { getSparkline } from '../../service/index'
 export default {
 	name: 'over-view',
 	data() {
@@ -36,6 +39,12 @@ export default {
 							show: true
 						}
 					}
+				},
+				dataZoom: {
+					type: 'slider',
+					start: 40,
+					end: 60,
+					fillerColor: 'rgba(37, 126, 202, 0.4)'
 				},
 				legend: {
 					data: ['蒸发量', '降水量', '平均温度']
@@ -80,11 +89,22 @@ export default {
 					yAxisIndex: 1,
 					data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
 				}]
-			}
+			},
+			sparkBoxes: []
 		}
 	},
+	created() {
+      getSparkline().then((res) => {
+        this.sparkBoxes = res.data.data.array
+      }).catch((err) => {
+        console.log(err)
+      })
+      
+    },
 	components: {
 		IEcharts,
-		CCollapse
+		CCollapse,
+		SparkLine,
+		SparklineBox
 	}
 }
