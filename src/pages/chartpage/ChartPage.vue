@@ -16,6 +16,19 @@
             <spark-line :params="{type: item.type,height:60,width:60}" :data='item.data'></spark-line>
           </sparkline-box>
         </div>
+
+        <bootstrap-modal ref="theModal">
+          <div slot="title">
+              模态框表单
+          </div>
+          <div slot="body">
+              <Forms></Forms>
+          </div>
+          <!-- <div slot="footer">
+              
+          </div> -->
+      </bootstrap-modal>
+      <button class="btn btn-info" @click="openTheModal()">创建表单</button>
       </section>
   </div>
 </template>

@@ -2,11 +2,14 @@ import CCollapse from '../../components/CollapsableBox'
 import IEcharts from 'vue-echarts-v3'
 import SparkLine from '../../components/Sparkline'
 import SparklineBox from '../../components/SparklineBox'
+import BootstrapModal from '../../components/BootstrapModal'
+import Forms from '../../components/Form'
 import { getSparkline } from '../../service/index'
 export default {
 	name: 'over-view',
 	data() {
 		return {
+			modalActive: false,
 			collapse3: {
 				class: 'box-success',
 				tittle: '诈骗类型统计分析',
@@ -101,10 +104,17 @@ export default {
       })
       
     },
+     methods: {
+	        openTheModal() {
+	            this.$refs.theModal.open();
+	        }
+	    },
 	components: {
 		IEcharts,
 		CCollapse,
 		SparkLine,
-		SparklineBox
+		SparklineBox,
+		BootstrapModal,
+		Forms
 	}
 }

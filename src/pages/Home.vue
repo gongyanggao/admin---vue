@@ -1,9 +1,9 @@
 <template>
     <div class="wrapper">
     	<NaviBar></NaviBar>
-      	<Slider></Slider>
+    	<Slider></Slider>
       	
-      	<div id="content-wrap" class="content-wrapper">
+    	<div id="content-wrap" class="content-wrapper">
 		    <c-breadcrumb></c-breadcrumb>
 		    
 	    	<router-view></router-view>
