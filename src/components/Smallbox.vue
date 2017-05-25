@@ -40,5 +40,7 @@ export default {
 .small-box>.inner {
     text-align: center;
 }
-
+.small-box-footer{
+  cursor: pointer;
+}
 </style>

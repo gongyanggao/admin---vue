@@ -22,7 +22,7 @@
               模态框表单
           </div>
           <div slot="body">
-              <Forms></Forms>
+              <Forms ref="forms"></Forms>
           </div>
           <!-- <div slot="footer">
               

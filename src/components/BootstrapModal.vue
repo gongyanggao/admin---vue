@@ -56,20 +56,20 @@ export default {
     },
     methods: {
         open() {
-                this.isShow = true
-                this.$nextTick(function() {
-                    this.isOpen = true
-                    this.$refs.modal.focus()
-                })
-            },
-            close() {
-                this.isOpen = false
-                this.$nextTick(function() {
-                    setTimeout(() => {
-                        this.isShow = false
-                    }, 500)
-                })
-            }
+            this.isShow = true
+            this.$nextTick(function() {
+                this.isOpen = true
+                this.$refs.modal.focus()
+            })
+        },
+        close() {
+            this.isOpen = false
+            this.$nextTick(function() {
+                setTimeout(() => {
+                    this.isShow = false
+                }, 500)
+            })
+        }
     }
 }
 </script>

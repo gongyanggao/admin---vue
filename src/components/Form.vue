@@ -102,8 +102,9 @@
           }
         });
       },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
+      resetForm() {
+        // this.$refs[formName].resetFields();
+        alert('reset')
       }
     }
   }

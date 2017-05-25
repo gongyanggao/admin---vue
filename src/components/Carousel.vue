@@ -8,7 +8,7 @@
         </tr>
       </thead>
     </table>
-    <ul id="moving" style="list-style: none;">
+    <ul id="moving">
       <li class="row" v-for="tr in caroOption.arrData">
         <div class="col-md-3">{{tr.type}}</div>
         <div class="col-md-5">{{tr.addr}}</div>
@@ -83,8 +83,9 @@ th{
 }
 ul{
   padding-left: 0;
+  list-style: none;
 }
-li div{
+li{
   height: 30px;
   line-height: 30px;
   text-align: center;
