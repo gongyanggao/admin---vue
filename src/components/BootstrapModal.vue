@@ -73,3 +73,11 @@ export default {
     }
 }
 </script>
+<style scoped>
+    .modal-dialog{
+        width: 450px;
+    }
+    .modal-content{
+
+    }
+</style>

@@ -1,5 +1,4 @@
 <template>
-	<section class="content" style="width:85%;">
 		<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
 		  <el-form-item label="活动名称" prop="name">
 		    <el-input v-model="ruleForm.name"></el-input>
@@ -48,7 +47,6 @@
 		    <el-button @click="resetForm('ruleForm')">重置</el-button>
 		  </el-form-item>
 		</el-form>
-	</section>
 	
 </template>
 <script>
@@ -102,9 +100,21 @@
           }
         });
       },
-      resetForm() {
+      resetForm(formName) {
+        console.log(this.$refs[formName])
+        console.log(formName)
         this.$refs[formName].resetFields();
       }
     }
   }
 </script>
+<style scoped>
+  .el-form-item{
+    margin-bottom: 15px;
+  }
+  .el-form{
+    padding: 15px;
+    width: 95%;
+  }
+  
+</style>

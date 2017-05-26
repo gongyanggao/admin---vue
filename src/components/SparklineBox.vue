@@ -24,12 +24,11 @@
   </div>
 </template>
 <script>
-import SparkLine from './Sparkline'
 export default {
   name: 'sparkline-box',
   props: ['sparkBox'],
   components: {
-    SparkLine
+    
   }
 }
 </script>

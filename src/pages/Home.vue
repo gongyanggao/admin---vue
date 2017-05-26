@@ -3,7 +3,7 @@
     	<NaviBar></NaviBar>
     	<Slider></Slider>
       	
-    	<div id="content-wrap" class="content-wrapper">
+    	<div id="content-wrap" class="content-wrapper" :style="{'min-height': mHeight}">
 		    <c-breadcrumb></c-breadcrumb>
 		    
 	    	<router-view></router-view>
@@ -18,11 +18,18 @@
 	import CBreadcrumb from '../components/Breadcrumb'
     export default {
         name: 'home',
+        computed: {
+            mHeight: ()=>{
+                return $(window).height() - 50
+            }
+        },
         components: {
 		    CBreadcrumb, NaviBar, Slider
 	    }
     }
 </script>
 <style scoped lang='less'>
-    
+    .wrapper{
+        position: relative;
+    }
 </style>

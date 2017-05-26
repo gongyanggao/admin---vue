@@ -17,13 +17,11 @@
           </sparkline-box>
         </div>
 
-        <bootstrap-modal ref="theModal">
+        <bootstrap-modal ref="theModal" :needFooter="false">
           <div slot="title">
               模态框表单
           </div>
-          <div slot="body">
-              <Forms ref="forms"></Forms>
-          </div>
+          <Forms slot="body" ref="forms"></Forms>
           <!-- <div slot="footer">
               
           </div> -->
