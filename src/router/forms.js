@@ -19,6 +19,18 @@ export default {
 			path: 'input',
 			name: '输入框',
 			component: routes.Modules.Input
+		}, {
+			path: 'select',
+			name: '下拉框',
+			component: routes.Modules.FormSelect
+		}, {
+			path: 'checkbox',
+			name: '多选框',
+			component: routes.Modules.CheckBox
+		}, {
+			path: 'datetimepicker',
+			name: '日期时间',
+			component: routes.Modules.DateTimePicker
 		}]
 	}]
 }
