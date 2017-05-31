@@ -308,7 +308,7 @@ export default {
     margin-bottom: -5px;
     border-bottom: 5px solid green;
   }
-  i.fa{
+  .router-nav i.fa{
     margin-right: 5px;
     color: #00c0ef;
   }
