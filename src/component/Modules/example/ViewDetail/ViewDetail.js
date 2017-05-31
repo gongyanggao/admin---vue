@@ -1,4 +1,4 @@
-import { getTable } from '../../../../service/index'
+import { getTable } from '../../../../service/'
 export default{
     name: 'view-detail',
     data() {

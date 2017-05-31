@@ -1,3 +1,7 @@
+/* 
+ *echarts公共配置项
+ */
+
 export function worldOption() {
 	return {
 		tooltip: {

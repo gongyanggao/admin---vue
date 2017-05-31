@@ -3,10 +3,10 @@ import Common from '../../../Common/'
 import {
 	getSparkline,
 	getChartLine
-} from '../../../../service/index'
+} from '../../../../service/'
 import {
 	barOption
-} from '../../../../utils/chartOption.js'
+} from '../../../../constant/'
 export default {
 	name: 'over-view',
 	data() {

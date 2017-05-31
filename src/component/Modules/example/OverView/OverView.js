@@ -14,7 +14,7 @@ import {
 	worldOption,
 	chinaOption,
 	pie
-} from '../../../../utils/chartOption'
+} from '../../../../constant/'
 
 export default {
 	name: 'over-view',
