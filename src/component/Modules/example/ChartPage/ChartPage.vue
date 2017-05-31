@@ -1,32 +1,32 @@
 <template>
-    <section class="content">
-      <div class="row">
-        <div class="col-md-12">
-          <c-collapse :coll-option="collapse3">
-            <div class="" style="height: 400px">
-              <IEcharts :option="bar" :loading="false" :resizable="true" style="height: 100%;width: 100%;"></IEcharts>
-            </div>
-          </c-collapse>
-        </div>
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <c-collapse :coll-option="collapse3">
+          <div class="" style="height: 400px">
+            <IEcharts :option="bar" :loading="false" :resizable="true" style="height: 100%;width: 100%;"></IEcharts>
+          </div>
+        </c-collapse>
       </div>
+    </div>
 
-      <div class="row">
-        <sparkline-box v-for="item in sparkBoxes" :spark-box="item">
-          <spark-line :params="{type: item.type,height:60,width:60}" :data='item.data'></spark-line>
-        </sparkline-box>
+    <div class="row">
+      <sparkline-box v-for="item in sparkBoxes" :spark-box="item">
+        <spark-line :params="{type: item.type,height:60,width:60}" :data='item.data'></spark-line>
+      </sparkline-box>
+    </div>
+
+    <bootstrap-modal ref="theModal" :needFooter="false">
+      <div slot="title">
+          模态框表单
       </div>
-
-      <bootstrap-modal ref="theModal" :needFooter="false">
-        <div slot="title">
-            模态框表单
-        </div>
-        <Forms slot="body" ref="forms"></Forms>
-        <!-- <div slot="footer">
-            
-        </div> -->
-      </bootstrap-modal>
-      <button class="btn btn-info" @click="openTheModal()">创建表单</button>
-    </section>
+      <Forms slot="body" ref="forms"></Forms>
+      <!-- <div slot="footer">
+          
+      </div> -->
+    </bootstrap-modal>
+    <button class="btn btn-info" @click="openTheModal()">创建表单</button>
+  </div>
 </template>
 
 <script>

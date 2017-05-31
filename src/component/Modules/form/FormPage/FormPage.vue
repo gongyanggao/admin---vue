@@ -1,7 +1,5 @@
 <template>
-    <section class="content">
       <Forms ref="forms"></Forms>
-    </section>
 </template>
 
 <script>

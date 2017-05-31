@@ -3,6 +3,7 @@ import routes from '../component/';
 export default {
 	path: '/demo',
 	name: '基础元素',
+	icon: 'fa fa-list',
 	redirect: '/demo/form',
 	component: routes.Home,
 	children: [{

@@ -3,6 +3,7 @@ import routes from '../component/';
 export default {
 	path: '/example',
 	name: '页面示例',
+	icon: 'fa fa-line-chart',
 	redirect: '/example/admin',
 	component: routes.Home,
 	children: [{

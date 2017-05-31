@@ -1,6 +1,6 @@
 <template>
   <!-- Content Header (Page header) -->
-  <section class="content">
+  <div>
     <div class="row">
       <div class="col-md-8">
 
@@ -45,7 +45,7 @@
         
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

@@ -14,16 +14,7 @@
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <router-link tag="li" v-for='(item,index) in $router.options.routes' v-if='!item.hidden' :to="{ 'name': item.name }" class=" messages-menu">
-          <a href="#">
-              <i class="fa fa-envelope-o"></i>{{item.name}}
-            </a></router-link>
-          
-        </ul>
-      </div>
+      
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -268,6 +259,17 @@
           </li>
         </ul>
       </div>
+
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu router-nav">
+        <ul class="nav navbar-nav">
+          <router-link tag="li" v-for='(item,index) in $router.options.routes' v-if='!item.hidden' :to="{ 'name': item.name }" class="nav-menu" :class="{active: currentIndex === index}" @click="currentIndex = index">
+          <a href="#">
+              <i :class="item.icon"></i>{{item.name}}
+            </a></router-link>
+          
+        </ul>
+      </div>
     </nav>
   </header>
 </template>
@@ -278,10 +280,10 @@ export default {
   name: 'NaviBar',
   data() {
     return {
-      sid: '123',
       unreadMessagesCount: 5,
       unreadNotificationsCount: 2,
-      remainTasksCount: 3
+      remainTasksCount: 3,
+      currentIndex: 0
     }
   },
   computed: {
@@ -305,5 +307,16 @@ export default {
   .open{
     margin-bottom: -5px;
     border-bottom: 5px solid green;
+  }
+  i.fa{
+    margin-right: 5px;
+    color: #00c0ef;
+  }
+  .nav-menu.active>a{
+    font-weight: bold;
+  }
+  .router-nav {
+    margin-left: 50px;
+    float: left;
   }
 </style>

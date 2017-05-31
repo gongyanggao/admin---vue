@@ -20,7 +20,6 @@ export default {
 	},
 	created() {
 		this.len = this.$route.matched.length
-		console.log(this.$router)
 	}
 }
 </script>

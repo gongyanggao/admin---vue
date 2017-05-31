@@ -1,6 +1,8 @@
 <template>
     <transition name="page" mode="out-in">
-      <router-view></router-view>
+    	<section class="content">
+    		<router-view></router-view>
+    	</section>
     </transition>  
   <!-- /.content-wrapper -->
 </template>
@@ -8,7 +10,12 @@
 <script>
 
 export default {
-  name: 'content-wrap'
+    name: 'content-wrap',
+	data() {
+		return {
+			
+		}
+	}
 }
 </script>
 
