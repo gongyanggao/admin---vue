@@ -3,9 +3,9 @@
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>V</b>ue</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>反诈管理</b>后台系统</span>
+      <span class="logo-lg"><b>后台管理</b>系统</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
