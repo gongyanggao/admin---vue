@@ -46,7 +46,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'slider',
@@ -60,7 +59,8 @@ export default {
     },
     computed: {
       username: function() {
-        return this.$store.state.user.username || localStorage.username
+        console.log(this.$store.state.user)
+        return this.$store.state.user.userinfo.username/* || JSON.parse(localStorage.userinfo).userinfo.username*/
       }
     },
     methods: {

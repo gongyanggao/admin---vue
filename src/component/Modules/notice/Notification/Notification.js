@@ -1,4 +1,5 @@
 export default {
+  name: 'notification',
   methods: {
     open1() {
       this.$notify({

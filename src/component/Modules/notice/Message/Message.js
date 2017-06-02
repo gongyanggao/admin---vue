@@ -1,4 +1,5 @@
 export default {
+  name: 'message',
   methods: {
     open1() {
       this.$message({

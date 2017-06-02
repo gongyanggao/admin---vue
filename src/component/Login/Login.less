@@ -1,23 +1,36 @@
-.login-logo{
-	line-height: 70px;
-	height: 70px;
-	font-weight: 700;
-	color: #FFF;
-	margin: 0;
-}
-.login-box{
-	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	border-radius: 3px;
-	background: #324057;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-top: -170px;
-	margin-left: -180px;
-}
-.login-box-body{
-	background: #E5E9F2;
-	padding: 20px;
-	border-top: 0;
-	color: #666;
+.login {
+    background : #1F2D3D;
+
+    .card-box {
+        box-shadow            : 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+        -webkit-border-radius : 5px;
+        border-radius         : 5px;
+        -moz-border-radius    : 5px;
+        background-clip       : padding-box;
+        margin-bottom         : 20px;
+        background-color      : #F9FAFC;
+        border                : 2px solid #8492A6;
+    }
+
+    .title {
+        margin      : 0px auto 40px auto;
+        text-align  : center;
+        color       : #505458;
+        font-weight : normal;
+        font-size   : 16px;
+
+        span {
+            cursor : pointer;
+
+            &.active {
+                font-weight : bold;
+                font-size   : 18px;
+            }
+        }
+    }
+
+    .loginform {
+        width   : 350px;
+        padding : 35px 35px 15px 35px;
+    }
 }

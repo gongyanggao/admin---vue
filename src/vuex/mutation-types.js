@@ -1,3 +1,5 @@
-export const SET_USER = 'SET_USER'
+export const UPDATE_REMUMBER = 'UPDATE_REMUMBER'
+export const UPDATE_USERINFO = 'UPDATE_USERINFO'
+export const REMOVE_REMUMBER = 'REMOVE_REMUMBER'
 //设置当前路由
 export const SET_CUR_ROUTE = 'SET_CUR_ROUTE'

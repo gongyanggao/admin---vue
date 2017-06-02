@@ -275,9 +275,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 export default {
-  name: 'NaviBar',
+  name: 'navi-bar',
   data() {
     return {
       unreadMessagesCount: 5,
@@ -288,7 +287,7 @@ export default {
   },
   computed: {
     username: function() {
-      return this.$store.state.user.username || localStorage.username
+      return this.$store.state.user.userinfo.username
     }
   },
   methods: {

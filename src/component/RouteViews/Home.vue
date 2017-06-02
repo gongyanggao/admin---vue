@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
-    	<NaviBar></NaviBar>
-    	<Slider></Slider>
+    	<navi-bar></navi-bar>
+    	<slider></slider>
       	
     	<div id="content-wrap" ref="wrapper" class="content-wrapper" >
 		    <c-breadcrumb></c-breadcrumb>

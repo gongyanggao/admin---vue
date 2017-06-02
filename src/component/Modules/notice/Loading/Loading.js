@@ -1,4 +1,5 @@
 export default {
+  name: 'loading',
   data() {
     return {
       tableData: [{
