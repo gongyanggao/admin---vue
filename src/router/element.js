@@ -36,7 +36,7 @@ export default {
 	}, {
 		path: 'notice',
 		name: '消息组件',
-		icon: 'fa fa-comment',
+		icon: 'fa fa-commenting',
 		component: routes.ContentWrap,
 		redirect: '/element/notice/message',
 		children: [{
