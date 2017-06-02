@@ -7,6 +7,12 @@ import Input from './form/FormInput/'
 import FormSelect from './form/FormSelect/'
 import CheckBox from './form/CheckBox/'
 import DateTimePicker from './form/DateTimePicker/'
+
+import Message from './notice/Message/'
+import MessageBox from './notice/MessageBox/'
+import Notification  from './notice/Notification/'
+import Loading from './notice/Loading/'
 export default {
 	OverView, ViewDetail, ChartPage, FormPage, Input, FormSelect, CheckBox, DateTimePicker
+	, Message, MessageBox, Notification, Loading
 }

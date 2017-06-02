@@ -9,6 +9,7 @@ export default {
 	children: [{
 		path: 'admin',
 		name: 'bootstrap3布局',
+		icon: 'fa fa-dashboard',
 		component: routes.ContentWrap,
 		redirect: '/example/admin/overview',
 		children: [{

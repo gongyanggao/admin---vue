@@ -4,7 +4,7 @@ import Router from 'vue-router'
 // UI Element Groups
 import routes from '../component/'
 import example from './example'
-import form from './forms'
+import element from './element'
 
 // forms
 Vue.use(Router)
@@ -22,7 +22,7 @@ export default new Router({
     component: routes.Login
   }]
   .concat(example)
-  .concat(form)
+  .concat(element)
   ,
   linkActiveClass: 'active'
 })

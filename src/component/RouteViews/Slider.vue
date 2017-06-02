@@ -28,7 +28,7 @@
         <li class="header">MAIN NAVIGATION</li>
         <li v-for="(item, index) in menu_list" class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>{{item.name}}</span>
+            <i :class="item.icon"></i> <span>{{item.name}}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
