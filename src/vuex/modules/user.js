@@ -35,6 +35,7 @@ function get(key, fn){
 
 // initial state
 const state = {
+  userinfo: get('userinfo').userinfo || {},
   remumber_flag: get('remumber_flag') ? true : false
 }
 
