@@ -11,6 +11,8 @@ import router from './router'
 import store from './vuex'
 import ElementUi from 'element-ui'
 Vue.use(ElementUi);
+import TouchRipple from 'vue-touch-ripple'
+Vue.use(TouchRipple);
 
 /* eslint-disable no-new */
 new Vue({

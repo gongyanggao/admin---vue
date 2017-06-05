@@ -34,7 +34,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <router-link  v-for="(child, cindex) in item.children" tag="li" :to="{ 'name': child.name }" v-if="!child.hidden"><a href=""><i class="fa fa-circle-o"></i>{{child.name}}</a></router-link>
+            <router-link  v-for="(child, cindex) in item.children" tag="li" :to="{ 'name': child.name }" v-if="!child.hidden" v-touch-ripple>
+              <a href=""><i class="fa fa-circle-o"></i>{{child.name}}</a>
+            </router-link>
             
           </ul>
         </li>
@@ -46,7 +48,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'slider',
   data() {
@@ -59,7 +60,6 @@ export default {
     },
     computed: {
       username: function() {
-        console.log(this.$store.state.user)
         return this.$store.state.user.userinfo.username/* || JSON.parse(localStorage.userinfo).userinfo.username*/
       }
     },
@@ -85,8 +85,12 @@ export default {
           }
       }
     },
+
     created () {
         this.updateCurMenu();
+    },
+    mounted() {
+      
     },
     watch: {
         $route(to, from) {
@@ -101,6 +105,15 @@ export default {
     left: 20px;
     top: 15px;
   }
+  .sidebar-collapse .image{
+    position: absolute;
+    left: 6px;
+    top: 10px;
+  }
+  .sidebar-collapse .image{
+    max-width: 35px;
+  }
+
   .user-panel{
     height: 60px;
   }
@@ -110,5 +123,12 @@ export default {
     left: 75px;
     height: 45px;
     font-size: 20px;
-}
+  }
+  .sidebar-menu .treeview-menu>li>a {
+      cursor: pointer;
+      z-index: 9999;
+  }
+  .sidebar-menu .treeview-menu>li.active>a>.fa {
+    color: #00a65a;
+  }
 </style>

@@ -303,19 +303,15 @@ export default {
 </script>
 
 <style scoped>
-  .open{
-    margin-bottom: -5px;
-    border-bottom: 5px solid green;
-  }
-  .router-nav i.fa{
-    margin-right: 5px;
-    color: #00c0ef;
-  }
-  .nav-menu.active>a{
-    font-weight: bold;
-  }
   .router-nav {
-    margin-left: 50px;
     float: left;
   }
+  .router-nav li.active>a{
+    font-weight: bold;
+  }
+  .router-nav li.active i.fa {
+    margin-right: 5px;
+    color: aqua;
+  }
+  
 </style>
