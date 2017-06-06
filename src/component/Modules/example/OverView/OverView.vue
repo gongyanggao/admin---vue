@@ -7,21 +7,27 @@
         <div class="nav-tabs-custom">
           <ul class="nav nav-tabs pull-right ui-sortable-handle">
             <li class="active">
-              <a @click="isWorld = true" href="" data-toggle="tab">境外</a>
+              <a href="#world" data-toggle="tab">境外</a>
             </li>
             <li class="">
-              <a @click="isWorld = false" href="" data-toggle="tab">境内</a>
+              <a href="#china" data-toggle="tab">境内</a>
+            </li>
+            <li class="">
+              <a href="#hubei" data-toggle="tab">湖北</a>
             </li>
             <li class="pull-left header">
               <i class="fa fa-map-marker"></i>诈骗网站地域分布
             </li>
           </ul>
           <div class="tab-content no-padding">
-            <div v-if="isWorld" class="chart tab-pane active" style="position: relative; height: 300px;">
+            <div id="world" class="chart tab-pane active" style="position: relative; height: 300px;">
               <IEcharts :option="world" :loading="false" :resizable="true" style="height: 100%;width: 100%;"></IEcharts>
             </div>
-            <div v-if="!isWorld" class="chart tab-pane active" style="position: relative; height: 300px;">
+            <div id="china" class="chart tab-pane" style="position: relative; height: 300px;">
               <IEcharts :option="china" :loading="false" :resizable="true" style="height: 100%;width: 100%;"></IEcharts>
+            </div>
+            <div id="hubei" class="chart tab-pane" style="position: relative; height: 300px;">
+              <IEcharts :option="world" :loading="false" :resizable="true" style="height: 100%;width: 100%;"></IEcharts>
             </div>
 
             <div class="row">

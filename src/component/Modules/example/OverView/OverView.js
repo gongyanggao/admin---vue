@@ -22,7 +22,6 @@ export default {
 		return {
 			infoLst: [],
 			summary: [],
-			isWorld: true,
 			carousel: {
 				arrHead: [{
 					tittle: '诈骗类型',
