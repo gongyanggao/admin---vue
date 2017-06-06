@@ -12,17 +12,21 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [{
-    path: '/',
-    hidden: true,
-    redirect: '/login'
-  }, {
-    path: '/login',
-    name: '登录',
-    hidden: true,
-    component: routes.Login
-  }]
-  .concat(example)
-  .concat(element)
-  ,
+      path: '/',
+      hidden: true,
+      redirect: '/login'
+    }, {
+      path: '/login',
+      name: '登录',
+      hidden: true,
+      component: routes.Login
+    }, {
+      path: '/404',
+      component: routes.NotFound,
+      hidden: true
+      
+    }]
+    .concat(example)
+    .concat(element),
   linkActiveClass: 'active'
 })

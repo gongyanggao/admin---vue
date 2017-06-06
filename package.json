@@ -25,7 +25,7 @@
     "jquery-ui": "^1.12.1",
     "vue": "^2.2.2",
     "vue-echarts-v3": "^1.0.3",
-    "vue-router": "^2.3.0",
+    "vue-router": "^2.5.3",
     "vue-touch-ripple": "^2.3.4",
     "vue2-bootstrap-modal": "^0.1.6",
     "vuex": "^2.3.1",
