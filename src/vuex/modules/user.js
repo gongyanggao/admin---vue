@@ -35,7 +35,7 @@ function get(key, fn){
 
 // initial state
 const state = {
-  userinfo: get('userinfo').userinfo || {},
+  userinfo: get('userinfo') ? get('userinfo').userinfo : {},
   remumber_flag: get('remumber_flag') ? true : false
 }
 
@@ -75,7 +75,7 @@ const mutations = {
   [types.REMOVE_REMUMBER](state) {
     localStorage.removeItem('remumber_flag');
     state.remumber_flag = false;
-  },
+  }
 }
 
 export default {

@@ -11,6 +11,8 @@ import router from './router'
 import store from './vuex'
 import ElementUi from 'element-ui'
 Vue.use(ElementUi);
+import Iview from 'iview'
+Vue.use(Iview);
 import TouchRipple from 'vue-touch-ripple'
 Vue.use(TouchRipple);
 
