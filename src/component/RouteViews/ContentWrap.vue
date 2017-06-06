@@ -10,12 +10,7 @@
 <script>
 
 export default {
-    name: 'content-wrap',
-	data() {
-		return {
-			
-		}
-	}
+  name: 'content-wrap',
 }
 </script>
 

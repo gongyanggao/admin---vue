@@ -32,7 +32,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="../../../static/img/user-0.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -149,13 +149,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="~admin-lte/dist/img/user7-128x128.jpg" class="user-image" alt="User Image">
+              <img src="../../../static/img/user-0.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">{{username}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="~admin-lte/dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
+                <img src="../../../static/img/user-0.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   {{username}} - wuhan
@@ -222,7 +222,7 @@ export default {
   },
   computed: {
     username: function() {
-      return this.$store.state.user.userinfo.username
+      return this.$store.state.user.userinfo ? this.$store.state.user.userinfo.username : JSON.parse(localStorage.userinfo).userinfo.username
     }
   },
   methods: {
@@ -230,12 +230,7 @@ export default {
       this.$router.push('/')
     }
   },
-  created () {
-    
-  },
-  components: {
-    Theme
-  }
+  components: { Theme }
 }
 
 </script>

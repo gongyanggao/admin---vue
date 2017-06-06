@@ -5,7 +5,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="~admin-lte/dist/img/user7-128x128.jpg" class="img-circle" alt="User Image">
+          <img src="../../../static/img/user-0.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{username}}</p>
@@ -51,52 +51,48 @@
 export default {
   name: 'slider',
   data() {
-      return {
-        menu_list: [],
-        unreadMessagesCount: 5,
-        unreadNotificationsCount: 2,
-        remainTasksCount: 3
-      }
-    },
-    computed: {
-      username: function() {
-        return this.$store.state.user.userinfo.username/* || JSON.parse(localStorage.userinfo).userinfo.username*/
-      }
-    },
-    methods: {
-       updateCurMenu(route) {
-          var route = route || this.$route;
-          if (route.matched.length) {
-              var rootPath = route.matched[0].path,
-                  fullPath = route.path;
-              this.$store.dispatch('set_cur_route', {
-                  rootPath,
-                  fullPath
-              });
-              var routes = this.$router.options.routes;
-              for (var i = 0; i < routes.length; i++) {
-                  if (routes[i].path === rootPath && !routes[i].hidden) {
-                      this.menu_list = routes[i].children;
-                      break;
-                  }
-              }
-          } else {
-              this.$router.push('/404');
-          }
-      }
-    },
-
-    created () {
-        this.updateCurMenu();
-    },
-    mounted() {
-      
-    },
-    watch: {
-        $route(to, from) {
-            this.updateCurMenu(to);
-        }
+    return {
+      menu_list: [],
+      unreadMessagesCount: 5,
+      unreadNotificationsCount: 2,
+      remainTasksCount: 3
     }
+  },
+  computed: {
+    username: function() {
+      return this.$store.state.user.userinfo ? this.$store.state.user.userinfo.username : JSON.parse(localStorage.userinfo).userinfo.username
+    }
+  },
+  methods: {
+    updateCurMenu(route) {
+      var route = route || this.$route;
+      if (route.matched.length) {
+          var rootPath = route.matched[0].path,
+              fullPath = route.path;
+          this.$store.dispatch('set_cur_route', {
+              rootPath,
+              fullPath
+          });
+          var routes = this.$router.options.routes;
+          for (var i = 0; i < routes.length; i++) {
+              if (routes[i].path === rootPath && !routes[i].hidden) {
+                  this.menu_list = routes[i].children;
+                  break;
+              }
+          }
+      } else {
+          this.$router.push('/404');
+      }
+    }
+  },
+  created () {
+    this.updateCurMenu();
+  },
+  watch: {
+    $route(to, from) {
+        this.updateCurMenu(to);
+    }
+  }
 }
 </script>
 <style scoped>
