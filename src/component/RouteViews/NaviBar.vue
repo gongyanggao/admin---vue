@@ -239,11 +239,13 @@ export default {
   .router-nav {
     float: left;
   }
-  .router-nav li.active>a{
+  .router-nav li i.fa {
+    margin-right: 5px;
+  }
+  .router-nav li.active>a {
     font-weight: bold;
   }
   .router-nav li.active i.fa {
-    margin-right: 5px;
     color: aqua;
   }
 </style>

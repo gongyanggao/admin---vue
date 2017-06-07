@@ -5,6 +5,10 @@ import Router from 'vue-router'
 import routes from '../component/'
 import example from './example'
 import element from './element'
+import industryManagement from './industryManagement'
+import informationSecurity from './informationSecurity'
+import systemManagement from './systemManagement'
+import specialResource from './specialResource'
 
 // forms
 Vue.use(Router)
@@ -21,12 +25,16 @@ export default new Router({
       hidden: true,
       component: routes.Login
     }, {
-      path: '/404',
+      path: '*',
       component: routes.NotFound,
       hidden: true
       
     }]
     .concat(example)
-    .concat(element),
+    .concat(element)
+    .concat(industryManagement)
+    .concat(informationSecurity)
+    .concat(systemManagement)
+    .concat(specialResource),
   linkActiveClass: 'active'
 })
