@@ -5,3 +5,5 @@ export const REMOVE_REMUMBER = 'REMOVE_REMUMBER'
 export const SET_CUR_ROUTE = 'SET_CUR_ROUTE'
 //设置当前主题颜色
 export const SET_THEME = 'SET_THEME'
+//
+export const OPEN_DIALOG = 'OPEN_DIALOG'

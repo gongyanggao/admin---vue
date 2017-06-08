@@ -7,7 +7,7 @@
           <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
 
           <p>
-            页面无法找到，你可以点击 <a href="./example">返回页面示例</a> 或者尝试搜索
+            页面无法找到，你可以点击 <a href="./">返回上级页面</a> 或者尝试搜索
           </p>
 
           <form class="search-form">
@@ -40,6 +40,7 @@
              
         },
         created(){
+          console.log(this.$route.matched)
         },
         mounted(){
 

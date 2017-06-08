@@ -22,4 +22,5 @@
   .wrapper{
       position: static;
   }
+  
 </style>

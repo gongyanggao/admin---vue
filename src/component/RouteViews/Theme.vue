@@ -69,9 +69,7 @@ export default {
 }
 </script>
 <style scoped>
-.navbar-nav>.tasks-menu>.dropdown-menu{
-	width: 160px;
-}
+
 .progress.xs, .progress-xs{
 	height: initial!important;
 }

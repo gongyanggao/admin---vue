@@ -19,124 +19,28 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+          <li class="dropdown messages-menu" v-for='(items,index) in $router.options.routes' v-if='!items.hidden'>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">{{ unreadMessagesCount }}</span>
+              <i :class="items.icon"></i>{{items.name}}
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have {{ unreadMessagesCount }} messages</li>
               <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="../../../static/img/user-0.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        AdminLTE Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Sales Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
+                  <li v-for="item in items.children"><!-- start message -->
+                      <h5>
+                        <i :class="item.icon"></i>{{item.name}}
+                      </h5>
+                      <div></div>
+                      <ul>
+                        <router-link v-for="child in item.children" :to="{ 'name': child.name }" v-if="!child.hidden" tag="li">{{child.name}}</router-link>
+                      </ul>
                   </li>
                 </ul>
               </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
           </li>
-          <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">{{ unreadNotificationsCount }}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have {{ unreadNotificationsCount }} notifications</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
+          
           <!-- Tasks: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -196,7 +100,7 @@
       </div>
 
       <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu router-nav">
+      <!-- <div class="navbar-custom-menu router-nav">
         <ul class="nav navbar-nav">
           <router-link tag="li" v-for='(item,index) in $router.options.routes' v-if='!item.hidden' :to="{ 'name': item.name }" class="nav-menu" :class="{active: currentIndex === index}" @click="currentIndex = index">
           <a href="#">
@@ -204,7 +108,7 @@
             </a></router-link>
           
         </ul>
-      </div>
+      </div> -->
     </nav>
   </header>
 </template>
@@ -215,6 +119,7 @@ export default {
   name: 'navi-bar',
   data() {
     return {
+      menu_list: [],
       unreadMessagesCount: 5,
       unreadNotificationsCount: 2,
       currentIndex: 0
@@ -228,6 +133,27 @@ export default {
   methods: {
     logout: function() {
       this.$router.push('/')
+    },
+    updateCurMenu(route) {
+      var route = route || this.$route;
+      if (route.matched.length) {
+          var rootPath = route.matched[0].path,
+              fullPath = route.path;
+          this.$store.dispatch('set_cur_route', {
+              rootPath,
+              fullPath
+          });
+      } else {
+          this.$router.push('/404');
+      }
+    }
+  },
+  created () {
+    this.updateCurMenu();
+  },
+  watch: {
+    $route(to, from) {
+        this.updateCurMenu(to);
     }
   },
   components: { Theme }
@@ -239,7 +165,7 @@ export default {
   .router-nav {
     float: left;
   }
-  .router-nav li i.fa {
+  .navbar-custom-menu>.navbar-nav>li i.fa {
     margin-right: 5px;
   }
   .router-nav li.active>a {
@@ -247,5 +173,45 @@ export default {
   }
   .router-nav li.active i.fa {
     color: aqua;
+  }
+  .navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
+    width: 600px;
+  }
+  .navbar-nav>.tasks-menu>.dropdown-menu{
+    width: 160px!important;
+  }
+  .navbar-nav>.user-menu>.dropdown-menu{
+    width: 300px!important;
+  }
+  .navbar-nav .dropdown-menu>li .menu>li {
+    padding: 8px;
+  }
+  .navbar-nav .dropdown-menu>li .menu>li>h5{
+    margin: 5px 0;
+    text-indent: 5px;
+  }
+  .navbar-nav .dropdown-menu>li .menu>li>div{
+    height: 1px;
+    width: 100%;
+    margin: 3px 0;
+    background-color: #0099cc;
+  }
+  .navbar-nav .dropdown-menu>li .menu>li>ul{
+    overflow: hidden;
+    display: block;
+    padding-left: 0px;
+    list-style: none;
+  }
+  .navbar-nav .dropdown-menu>li .menu>li>ul>li{
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    color: #888888;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  .navbar-nav .dropdown-menu>li .menu>li>ul>li:hover{
+    color: #0099ff;
+    text-decoration: underline;
   }
 </style>

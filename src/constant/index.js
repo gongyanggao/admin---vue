@@ -118,3 +118,46 @@ export function barOption() {
 		}]
 	}
 };
+
+/* 
+ *工具栏配置
+ */
+export const tools =  {
+	option: [{
+		icon: 'fa fa-mail-reply',
+		name: '返回',
+		fun: 'back'
+	}, {
+		icon: 'fa fa-file-code-o',
+		name: '版本信息',
+		fun: 'editions'
+	}, {
+		icon: 'fa fa-envelope',
+		name: '短信息',
+		fun: 'envelope'
+	}, {
+		icon: 'fa fa-lock',
+		name: '修改密码',
+		fun: 'editions'
+	}, {
+		icon: 'fa fa-bar-chart',
+		name: '数据统计',
+		fun: 'editions'
+	}, {
+		icon: 'fa fa-ellipsis-v',
+		name: 'IP和备案信息',
+		fun: 'editions'
+	}, {
+		icon: 'fa fa-comments',
+		name: '站内消息发送',
+		fun: 'editions'
+	}, {
+		icon: 'fa fa-android',
+		name: '手机APP下载',
+		fun: 'editions'
+	}, {
+		icon: 'fa fa-tv',
+		name: '值班大屏',
+		fun: 'editions'
+	}]
+}

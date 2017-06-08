@@ -90,7 +90,7 @@ export default {
 	}, {
 		path: 'baidu',
 		name: '网站小百度',
-		icon: 'fa fa-google-plus',
+		icon: 'fa fa-paw',
 		component: routes.ContentWrap,
 		redirect: '/information/baidu/query',
 		children: [{
@@ -175,7 +175,7 @@ export default {
 		name: '部省应用',
 		icon: 'fa fa-building',
 		component: routes.ContentWrap,
-		redirect: '/information/department-province-application/keyword',
+		redirect: '/information/department-province-application/monitor',
 		children: [{
 			path: 'monitor',
 			name: '监测指令',

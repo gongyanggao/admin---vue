@@ -9,7 +9,6 @@
         </div>
         <div class="pull-left info">
           <p>{{username}}</p>
-          <!-- <a href="#"><i class="fa fa-circle text-success"></i>Online</a> -->
         </div>
       </div>
       <!-- search form -->
@@ -25,37 +24,26 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
-        <li v-for="(item, index) in menu_list" class="active treeview">
-          <a href="#">
+        <li class="header">工具栏</li>
+        <li class="treeview" v-for="(item,index) in toolOption" @click="openDialog(index)" v-touch-ripple>
+          <a>
             <i :class="item.icon"></i> <span>{{item.name}}</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <router-link  v-for="(child, cindex) in item.children" tag="li" :to="{ 'name': child.name }" v-if="!child.hidden" v-touch-ripple>
-              <a href=""><i class="fa fa-circle-o"></i>{{child.name}}</a>
-            </router-link>
-            
-          </ul>
         </li>
-        
       </ul>
+      
     </section>
     <!-- /.sidebar -->
   </aside>
 </template>
 
 <script>
+import { tools } from '../../constant/'
 export default {
   name: 'slider',
   data() {
     return {
-      menu_list: [],
-      unreadMessagesCount: 5,
-      unreadNotificationsCount: 2,
-      remainTasksCount: 3
+      toolOption: []
     }
   },
   computed: {
@@ -64,34 +52,12 @@ export default {
     }
   },
   methods: {
-    updateCurMenu(route) {
-      var route = route || this.$route;
-      if (route.matched.length) {
-          var rootPath = route.matched[0].path,
-              fullPath = route.path;
-          this.$store.dispatch('set_cur_route', {
-              rootPath,
-              fullPath
-          });
-          var routes = this.$router.options.routes;
-          for (var i = 0; i < routes.length; i++) {
-              if (routes[i].path === rootPath && !routes[i].hidden) {
-                  this.menu_list = routes[i].children;
-                  break;
-              }
-          }
-      } else {
-          this.$router.push('/404');
-      }
+    openDialog(index) {
+      this.$store.dispatch('open_dialog', {index});
     }
   },
   created () {
-    this.updateCurMenu();
-  },
-  watch: {
-    $route(to, from) {
-        this.updateCurMenu(to);
-    }
+    this.toolOption = tools.option
   }
 }
 </script>
@@ -109,7 +75,6 @@ export default {
   .sidebar-collapse .image{
     max-width: 35px;
   }
-
   .user-panel{
     height: 60px;
   }
@@ -120,11 +85,7 @@ export default {
     height: 45px;
     font-size: 20px;
   }
-  .sidebar-menu .treeview-menu>li>a {
+  .sidebar-menu>.treeview {
       cursor: pointer;
-      z-index: 9999;
-  }
-  .sidebar-menu .treeview-menu>li.active>a>.fa {
-    color: #00a65a;
   }
 </style>
