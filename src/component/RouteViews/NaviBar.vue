@@ -16,9 +16,13 @@
       </a>
       
       <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
+      <div class="navbar-custom-menu router-nav">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
+          
+        </ul>
+      </div>
+      <div class="navbar-custom-menu user-nav">
+        <ul class="nav navbar-nav">
           <li class="dropdown messages-menu" v-for='(items,index) in $router.options.routes' v-if='!items.hidden'>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i :class="items.icon"></i>{{items.name}}
@@ -40,8 +44,6 @@
               </li>
             </ul>
           </li>
-          
-          <!-- Tasks: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               换肤
@@ -162,20 +164,14 @@ export default {
 </script>
 
 <style scoped>
-  .router-nav {
-    float: left;
-  }
-  .navbar-custom-menu>.navbar-nav>li i.fa {
+  .navbar-nav>li i.fa {
     margin-right: 5px;
   }
-  .router-nav li.active>a {
-    font-weight: bold;
+  .navbar-nav .dropdown-menu {
+    box-shadow: 0 6px 12px rgba(0,0,0,.3);
   }
-  .router-nav li.active i.fa {
-    color: aqua;
-  }
-  .navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
-    width: 600px;
+  .navbar-nav>li>.dropdown-menu {
+    width: 500px;
   }
   .navbar-nav>.tasks-menu>.dropdown-menu{
     width: 160px!important;

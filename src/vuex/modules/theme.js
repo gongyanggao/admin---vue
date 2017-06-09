@@ -14,7 +14,10 @@ const getters = {
 // actions
 const actions = {
 	set_theme: ({ commit }, theme_class) => {
+      return new Promise((resolve, reject) => {
         commit(types.SET_THEME, theme_class);
+        resolve()
+      });
     }
 }
 

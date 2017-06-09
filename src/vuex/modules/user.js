@@ -49,10 +49,18 @@ const getters = {
 // actions
 const actions = {
 	update_userinfo: ({ commit }, {userinfo}) => {
+    return new Promise((resolve, reject) => {
       commit(types.UPDATE_USERINFO, {userinfo});
+      resolve()
+    });
+      
   },
   update_remumber: ({ commit }, {remumber_flag}) => {
+    return new Promise((resolve, reject) => {
       commit(types.UPDATE_REMUMBER, {remumber_flag});
+      resolve()
+    });
+      
   },
   remove_remumber: ({ commit }) => {
     return new Promise((resolve, reject) => {

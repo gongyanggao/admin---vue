@@ -24,7 +24,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">工具栏</li>
+        <li class="header">工具栏菜单</li>
         <li class="treeview" v-for="(item,index) in toolOption" @click="openDialog(index)" v-touch-ripple>
           <a>
             <i :class="item.icon"></i> <span>{{item.name}}</span>

@@ -15,14 +15,20 @@ const getters = {
 // actions
 const actions = {
 	open_dialog: ({ commit }, index) => {
-        commit(types.OPEN_DIALOG, index);
-    }
+    return new Promise((resolve, reject) => {
+      commit(types.OPEN_DIALOG, index);
+      resolve()
+    });
+  }
 }
 
 // mutations
 const mutations = {
   [types.OPEN_DIALOG](state, index) {
         state.dialogIndex = index.index;
+        setTimeout(function () {
+        	state.dialogIndex = -1
+        }, 50)
     }
 }
 
