@@ -57,3 +57,17 @@ export function getSparkline() {
 export function getChartLine() {
 	return instance.get(API.GET_CHARTLINE)
 }
+
+/**
+ * 获取siteIP
+ */
+export function getSiteIP(domain) {
+	return instance.get(API.GET_SITEIP + domain,)
+}
+
+/**
+ * 获取Message
+ */
+export function getMessage(ip) {
+	return instance.get(API.GET_MESSAGE + ip,)
+}

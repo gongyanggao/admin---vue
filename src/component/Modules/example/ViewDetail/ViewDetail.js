@@ -51,11 +51,11 @@ export default{
     methods: {
       handleSizeChange(val) {
         this.currentPageSize = val
-        console.log(this.currentPageSize)
+        this.$message('切换每页显示条数：' + val + '条')
       },
       handleCurrentChange(val) {
         this.currentPageNumber = val
-        console.log(this.currentPageNumber)
+        this.$message('切换至第：' + val + '页')
       },
       onSubmit() {
         console.log(this.formInline);
