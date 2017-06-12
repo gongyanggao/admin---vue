@@ -54,6 +54,9 @@ export default {
   methods: {
     openDialog(index) {
       this.$store.dispatch('open_dialog', {index});
+      setTimeout(() => {
+        this.$store.dispatch('close_dialog');
+      }, 100)
     }
   },
   created () {
