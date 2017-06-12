@@ -46,8 +46,7 @@
           </li>
           <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              换肤
-              <i class="fa fa-qq"></i>
+              <i class="fa fa-qq"></i>换肤
               <span class="label label-danger"></span>
             </a>
             <theme></theme>

@@ -2,28 +2,28 @@
     <transition name="page" mode="out-in">
     	<section class="content">
     		<router-view></router-view>
-			  <el-dialog title="shouhuo" :visible.sync="dialog0">
+			  <el-dialog :close-on-click-modal="false" title="shouhuo" :visible.sync="dialog0">
 			    <el-table :data="gridData0">
 			      <el-table-column property="date" label="日期" width="150"></el-table-column>
 			      <el-table-column property="name" label="大名" width="200"></el-table-column>
 			      <el-table-column property="address" label="地址"></el-table-column>
 			    </el-table>
 			  </el-dialog>
-			  <el-dialog title="版本信息" :visible.sync="dialog1">
+			  <el-dialog :close-on-click-modal="false" title="版本信息" :visible.sync="dialog1">
 			    <el-table :data="gridData1">
 			      <el-table-column property="pid" label="版本号" width="200"></el-table-column>
 			      <el-table-column property="node" label="系统节点" width="150"></el-table-column>
 			      <el-table-column property="date" label="上次升级时间"></el-table-column>
 			    </el-table>
 			  </el-dialog>
-			  <el-dialog title="shouhuo" :visible.sync="dialog2">
+			  <el-dialog :close-on-click-modal="false" title="shouhuo" :visible.sync="dialog2">
 			    <el-table :data="gridData2">
 			      <el-table-column property="date" label="日期" width="150"></el-table-column>
 			      <el-table-column property="name" label="大名" width="200"></el-table-column>
 			      <el-table-column property="address" label="地址"></el-table-column>
 			    </el-table>
 			  </el-dialog>
-			  <el-dialog title="修改密码" :visible.sync="dialog3">
+			  <el-dialog :close-on-click-modal="false" title="修改密码" :visible.sync="dialog3">
 				  <el-form :model="form3" :rules="rules3" ref="form3">
 				    <el-form-item label="旧密码" :label-width="formLabelWidth" prop="old">
 				      <el-input type="password" v-model="form3.old" auto-complete="off"></el-input>
@@ -39,25 +39,25 @@
 				    </el-form-item>
 				  </el-form>
 				  <div slot="footer" class="dialog-footer">
-				    <el-button @click="dialog3 = false">取 消</el-button>
+				    <el-button @click="dialog3=false">取 消</el-button>
 				    <el-button type="primary" @click="submitForm3('form3')">确 定</el-button>
 				  </div>
 				</el-dialog>
-			  <el-dialog title="shouhuo" :visible.sync="dialog4">
+			  <el-dialog :close-on-click-modal="false" title="shouhuo" :visible.sync="dialog4">
 			    <el-table :data="gridData4">
 			      <el-table-column property="date" label="日期" width="150"></el-table-column>
 			      <el-table-column property="name" label="大名" width="200"></el-table-column>
 			      <el-table-column property="address" label="地址"></el-table-column>
 			    </el-table>
 			  </el-dialog>
-			  <el-dialog title="IP和备案信息" :visible.sync="dialog5">
+			  <el-dialog :close-on-click-modal="false" title="IP和备案信息" :visible.sync="dialog5">
 			    <el-table :data="gridData5">
 			      <el-table-column property="ip" label="IP" width="200"></el-table-column>
 			      <el-table-column property="fileNo" label="备案号" width="150"></el-table-column>
 			      <el-table-column property="date" label="备案时间"></el-table-column>
 			    </el-table>
 			  </el-dialog>
-			  <el-dialog title="站内消息发送" :visible.sync="dialog6">
+			  <el-dialog :close-on-click-modal="false" title="站内消息发送" :visible.sync="dialog6">
 			    <el-form :model="form6" :rules="rules6" ref="form6">
 			    	<el-form-item label="标题" :label-width="formLabelWidth" prop="textarea1">
 				      <el-input
@@ -77,11 +77,11 @@
 						</el-form-item>
 				  </el-form>
 				  <div slot="footer" class="dialog-footer">
-				    <el-button @click="dialog6 = false">取 消</el-button>
+				    <el-button @click="dialog6=false">取 消</el-button>
 				    <el-button type="primary" @click="submitForm6('form6')">确 定</el-button>
 				  </div>
 			  </el-dialog>
-			  <el-dialog title="shouhuo" :visible.sync="dialog7">
+			  <el-dialog :close-on-click-modal="false" title="shouhuo" :visible.sync="dialog7">
 			    <el-table :data="gridData7">
 			      <el-table-column property="date" label="日期" width="150"></el-table-column>
 			      <el-table-column property="name" label="大名" width="200"></el-table-column>
@@ -228,6 +228,8 @@ export default {
 	  		case 7:
 	  			this.dialog7 = true
 	    		break
+        default:
+          
     	}
     }
   }

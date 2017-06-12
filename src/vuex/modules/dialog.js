@@ -19,17 +19,21 @@ const actions = {
       commit(types.OPEN_DIALOG, index);
       resolve()
     });
+  },
+  close_dialog: ({ commit }) => {
+      commit(types.CLOSE_DIALOG);
   }
 }
 
 // mutations
 const mutations = {
   [types.OPEN_DIALOG](state, index) {
-        state.dialogIndex = index.index;
-        setTimeout(function () {
-        	state.dialogIndex = -1
-        }, 50)
-    }
+      state.dialogIndex = index.index;
+      
+  },
+  [types.CLOSE_DIALOG](state) {
+      state.dialogIndex = -1;
+  }
 }
 
 export default {
