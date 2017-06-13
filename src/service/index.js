@@ -71,3 +71,17 @@ export function getSiteIP(domain) {
 export function getMessage(ip) {
 	return instance.get(API.GET_MESSAGE + ip,)
 }
+
+/**
+ * 获取SiteAccess
+ */
+export function getSiteAccess(id) {
+	return instance.get(API.GET_SITEACCESS + id,)
+}
+
+/**
+ * 获取ChartPie
+ */
+export function getChartPie(id) {
+	return instance.get(API.GET_CHARTPIE + id,)
+}

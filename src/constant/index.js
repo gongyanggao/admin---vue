@@ -61,19 +61,7 @@ export function pie() {
 			type: 'pie',
 			radius: '55%',
 			center: ['50%', '50%'],
-			data: [{
-				value: 335,
-				name: '电信诈骗'
-			}, {
-				value: 310,
-				name: '金融诈骗'
-			}, {
-				value: 234,
-				name: '色情诈骗'
-			}, {
-				value: 135,
-				name: '微信朋友圈'
-			}],
+			data: [],
 			itemStyle: {
 				emphasis: {
 					shadowBlur: 10,

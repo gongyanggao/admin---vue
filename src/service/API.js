@@ -9,3 +9,5 @@ export const GET_SPARKLINE = 'getsparkline'; // 获取 表格
 export const GET_CHARTLINE = 'getchartline'; // 获取 表格
 export const GET_SITEIP = 'getsiteip/'; // 获取 表格
 export const GET_MESSAGE = 'getmessage/'; // 获取 表格
+export const GET_SITEACCESS = 'getsiteaccess/'; // 获取 表格
+export const GET_CHARTPIE = 'getchartpie/'; // 获取 表格

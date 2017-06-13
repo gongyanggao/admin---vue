@@ -12,7 +12,10 @@ import Message from './notice/Message/'
 import MessageBox from './notice/MessageBox/'
 import Notification  from './notice/Notification/'
 import Loading from './notice/Loading/'
+
+import IndustryManagement from './industry/IndustryManagement/'
+
 export default {
 	OverView, ViewDetail, ChartPage, FormPage, Input, FormSelect, CheckBox, DateTimePicker
-	, Message, MessageBox, Notification, Loading
+	, Message, MessageBox, Notification, Loading, IndustryManagement
 }

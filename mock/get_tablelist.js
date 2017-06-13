@@ -7,7 +7,7 @@ module.exports = {
 			data: Mock.mock({
 				'array|1-10': [{
 					'id': '@id',
-					'name': '@name',
+					'name': '@cname',
 					'city': '@city',
 					'createdAt': '@date("yyyy-MM-dd")',
 					'tag|+1': ['家', '公司']
