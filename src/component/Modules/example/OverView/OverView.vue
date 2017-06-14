@@ -38,7 +38,7 @@
         </div>
 
         <c-collapse :coll-option="collapse2">
-          <c-carousel :caro-option="carousel"></c-carousel>
+          <!-- <c-carousel :caro-option="carousel"></c-carousel> -->
         </c-collapse>
       </div>
       <div class="col-md-4">

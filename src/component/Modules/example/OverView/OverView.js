@@ -8,7 +8,8 @@ IEcharts.registerMap('china', chinaMap)
 import {
 	getCheatTable,
 	getInfo,
-	getSummary
+	getSummary,
+	getChartPie
 } from '../../../../service/'
 import {
 	worldOption,
@@ -22,6 +23,7 @@ export default {
 		return {
 			infoLst: [],
 			summary: [],
+			pie: {},
 			carousel: {
 				arrHead: [{
 					tittle: '诈骗类型',
@@ -58,11 +60,6 @@ export default {
 			opt.series[0].mapType = 'world'
 
 			return opt
-		},
-		pie: () => {
-			let opt = pie()
-			opt.series[0].name = '诈骗事件统计'
-			return opt
 		}
 	},
 	created() {
@@ -95,11 +92,21 @@ export default {
 		}).catch((err) => {
 			console.log(err)
 		})
+		this.pie = this.getPieData(1)
 	},
 	mounted() {
 
 	},
 	methods: {
+		getPieData(id) {
+	      let opt = pie()
+	      getChartPie(id).then((res) => {
+	          opt.series[0].data = res.data.data.array
+	      }).catch((err) => {
+	        console.log(err)
+	      })
+	      return opt
+	    },
 		onReady(instance) {
 
 		},
@@ -113,7 +120,7 @@ export default {
 	components: {
 		CInfobox: Common.CInfobox,
 		CSmallbox: Common.CSmallbox,
-		CCarousel: Common.CCarousel,
+		// CCarousel: Common.CCarousel,
 		CCollapse: Common.CCollapse,
 		IEcharts
 	}

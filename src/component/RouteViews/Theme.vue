@@ -1,7 +1,7 @@
 <template>
 <ul class="dropdown-menu">
   <li>
-    <ul class="menu">
+    <ul class="menu-ul">
       <li v-for="item in themes">
         <a href="#" @click="changeTheme(item.bg)">
           
@@ -69,7 +69,22 @@ export default {
 }
 </script>
 <style scoped>
-
+.menu-ul{
+  padding-top: 10px;
+  display: block;
+  padding-left: 0px;
+  list-style: none;
+  height: 200px;
+  overflow-y: auto;
+}
+.menu-ul>li{
+  display: list-item;
+}
+.menu-ul>li>a{
+  display: block;
+  white-space: nowrap;
+  border-bottom: 1px solid #f4f4f4;
+}
 .progress.xs, .progress-xs{
 	height: initial!important;
 }

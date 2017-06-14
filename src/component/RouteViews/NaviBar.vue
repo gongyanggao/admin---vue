@@ -30,7 +30,7 @@
             <ul class="dropdown-menu">
               <li>
                 <!-- inner menu: contains the actual data -->
-                <ul class="menu">
+                <ul class="menu-ul">
                   <li v-for="item in items.children"><!-- start message -->
                       <h5>
                         <i :class="item.icon"></i>{{item.name}}
@@ -177,11 +177,13 @@ export default {
   .navbar-nav>li i.fa {
     margin-right: 5px;
   }
-  .navbar-nav .dropdown-menu {
+  .navbar-nav>.dropdown>.dropdown-menu {
     box-shadow: 0 6px 12px rgba(0,0,0,.3);
   }
-  .navbar-nav>li>.dropdown-menu {
+  .navbar-nav>.messages-menu>.dropdown-menu {
     width: 500px;
+    height: 300px;
+    overflow-y: auto;
   }
   .navbar-nav>.tasks-menu>.dropdown-menu{
     width: 160px!important;
@@ -189,26 +191,29 @@ export default {
   .navbar-nav>.user-menu>.dropdown-menu{
     width: 300px!important;
   }
-  .navbar-nav .dropdown-menu>li .menu>li {
+  .navbar-nav>.messages-menu>.dropdown-menu .menu-ul>li {
     padding: 8px;
   }
-  .navbar-nav .dropdown-menu>li .menu>li>h5{
+  .navbar-nav>.messages-menu>.dropdown-menu .menu-ul>li>h5{
     margin: 5px 0;
     text-indent: 5px;
   }
-  .navbar-nav .dropdown-menu>li .menu>li>div{
+  .navbar-nav>.messages-menu>.dropdown-menu .menu-ul>li>div{
     height: 1px;
     width: 100%;
     margin: 3px 0;
     background-color: #0099cc;
   }
-  .navbar-nav .dropdown-menu>li .menu>li>ul{
-    overflow: hidden;
-    display: block;
+  .navbar-nav .dropdown-menu .menu-ul{
     padding-left: 0px;
     list-style: none;
   }
-  .navbar-nav .dropdown-menu>li .menu>li>ul>li{
+  .navbar-nav .dropdown-menu .menu-ul>li>ul{
+    overflow: hidden;
+    display: block;
+    padding-left: 0px;
+  }
+  .navbar-nav>.messages-menu>.dropdown-menu .menu-ul>li>ul>li{
     display: inline-block;
     float: left;
     font-size: 12px;
@@ -216,7 +221,7 @@ export default {
     cursor: pointer;
     padding: 5px 10px;
   }
-  .navbar-nav .dropdown-menu>li .menu>li>ul>li:hover{
+  .navbar-nav>.messages-menu>.dropdown-menu .menu-ul>li>ul>li:hover{
     color: #0099ff;
     text-decoration: underline;
   }
