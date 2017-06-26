@@ -54,8 +54,8 @@ export function getSparkline() {
 /**
  * 获取chartline
  */
-export function getChartLine() {
-	return instance.get(API.GET_CHARTLINE)
+export function getChartLine(id) {
+	return instance.get(API.GET_CHARTLINE + id)
 }
 
 /**

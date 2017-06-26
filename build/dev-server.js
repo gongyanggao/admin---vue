@@ -65,11 +65,6 @@ app.use(staticPath, express.static('./static'))
 
 var uri = 'http://localhost:' + port
 
-var _resolve
-var readyPromise = new Promise(resolve => {
-  _resolve = resolve
-})
-
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
   console.log('> Listening at ' + uri + '\n')
@@ -77,7 +72,9 @@ devMiddleware.waitUntilValid(() => {
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri,{app:'chrome'})
   }
-  _resolve()
+  return new Promise(resolve => {
+    _resolve()
+  })
 })
 
 // var server = app.listen(port)

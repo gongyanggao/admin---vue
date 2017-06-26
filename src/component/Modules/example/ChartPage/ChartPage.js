@@ -11,6 +11,7 @@ export default {
 	name: 'over-view',
 	data() {
 		return {
+			id: 2,
 			modalActive: false,
 			collapse3: {
 				class: 'box-success',
@@ -27,8 +28,7 @@ export default {
 		}).catch((err) => {
 			console.log(err)
 		})
-
-		this.bar = this.getChartsData()
+		this.bar = this.getChartsData(this.id)
 	},
 	computed: {
 
@@ -37,14 +37,16 @@ export default {
 		openTheModal() {
 			this.$refs.theModal.open();
 		},
-		getChartsData() {
+		refreshChart() {
+			this.bar = this.getChartsData(3)
+		},
+		getChartsData(id) {
 			let opt = barOption()
-			getChartLine().then((res) => {
-				opt.series[0].data = res.data.data.data
-
-			}).catch((err) => {
-				console.log(err)
-			})
+			// getChartLine(this.id).then((res) => {
+			// 	opt.series[0].data = res.data.data.data
+			// }).catch((err) => {
+			// 	console.log(err)
+			// })
 			return opt
 		}
 	},

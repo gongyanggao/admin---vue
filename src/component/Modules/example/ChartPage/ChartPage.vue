@@ -6,6 +6,7 @@
           <div class="" style="height: 400px">
             <IEcharts :option="bar" :loading="false" :resizable="true" style="height: 100%;width: 100%;"></IEcharts>
           </div>
+          <button class="btn btn-info" @click="refreshChart()">改变数据</button>
         </c-collapse>
       </div>
     </div>
