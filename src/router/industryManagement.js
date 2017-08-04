@@ -23,9 +23,8 @@ export default {
 			component: routes.Modules.IndustryManagement
 		}, {
 			path: 'list',
-			hidden: true,
 			name: '列表',
-			component: routes.Modules.IndustryManagement
+			component: routes.Modules.TableList
 		}]
 	}, {
 		path: 'resources',

@@ -8,3 +8,6 @@ export const SET_THEME = 'SET_THEME'
 //
 export const OPEN_DIALOG = 'OPEN_DIALOG'
 export const CLOSE_DIALOG = 'CLOSE_DIALOG'
+
+export const SAVE_COLOUMS = 'SAVE_COLOUMS'
+export const LOADING_CHANGE = 'LOADING_CHANGE'

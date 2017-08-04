@@ -15,6 +15,7 @@ var webpackConfig = require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
+console.log(process.env)
 // automatically open browser, if not set will be false
 var autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend
@@ -65,6 +66,11 @@ app.use(staticPath, express.static('./static'))
 
 var uri = 'http://localhost:' + port
 
+var _resolve
+var readyPromise = new Promise(resolve => {
+  _resolve = resolve
+})
+
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
   console.log('> Listening at ' + uri + '\n')
@@ -72,9 +78,7 @@ devMiddleware.waitUntilValid(() => {
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri,{app:'chrome'})
   }
-  return new Promise(resolve => {
-    _resolve()
-  })
+  _resolve()
 })
 
 // var server = app.listen(port)

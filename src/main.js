@@ -12,6 +12,7 @@ import store from './vuex'
 import ElementUi from 'element-ui'
 Vue.use(ElementUi);
 import Iview from 'iview'
+import 'iview/dist/styles/iview.css';    // 使用 CSS
 Vue.use(Iview);
 import TouchRipple from 'vue-touch-ripple'
 Vue.use(TouchRipple);

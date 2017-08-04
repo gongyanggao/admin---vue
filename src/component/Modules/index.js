@@ -14,8 +14,9 @@ import Notification  from './notice/Notification/'
 import Loading from './notice/Loading/'
 
 import IndustryManagement from './industry/IndustryManagement/'
+import TableList from './industry/TableList/'
 
 export default {
 	OverView, ViewDetail, ChartPage, FormPage, Input, FormSelect, CheckBox, DateTimePicker
-	, Message, MessageBox, Notification, Loading, IndustryManagement
+	, Message, MessageBox, Notification, Loading, IndustryManagement, TableList
 }
